@@ -8,11 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <iframe id="video-player" width="1120" height="630" src="https://video.playphrase.me/5b183b878079eb4cd4a5b28d/5e8af4a024aa9a0025d06e8b.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+    <!-- container for all elements-->
+    <div id="container">
+        <!-- video player -->
+        <iframe id="video-player" src="https://video.playphrase.me/5b183b878079eb4cd4a5b28d/5e8af4a024aa9a0025d06e8b.mp4" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
+        
+        <!-- container for buttons and text box -->
+        <div id="btn-container">
+            <button id="text-box">Select an Option</button>
+            <button id="btn-day" onclick="playDay()">Day</button>
+            <button id="btn-month" onclick="playMonth()">Month</button>
+        </div>
+    </div>
 
-    <button id="btn-day" onclick="playDay()">Day</button>
-    <button id="btn-month" onclick="playMonth()">Month</button>
-
+    <!-- script link -->
     <script src="script.js"></script>
 </body>
 </html>
