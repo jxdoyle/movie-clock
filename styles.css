@@ -6,10 +6,12 @@
     font-family: 'Roboto Mono', monospace;
 }
 
+/* background colour */
 body {
     background-color: lightblue;
 }
 
+/* video player size */
 iframe {
     margin: auto;
     width: 100%;
@@ -17,6 +19,7 @@ iframe {
     padding: 10px;
 }
 
+/* button setup */
 button {
     background-color: #000000;
     border: 0;
@@ -29,19 +32,21 @@ button {
     font-size: 2vw;
 }
 
+/* container setup and centering */
 #container {
     margin: auto;
     margin-top: 5vh;
     width: 60%;
     padding: 10px;
 }
-
+/* button container */
 #btn-container {
     margin: auto;
     width: 90%;
     padding: 10px;
 }
 
+/* set up text box, size fits all potential text outcomes */
 #text-box {
     cursor: default;
     background-color: white;
@@ -49,13 +54,14 @@ button {
     width: 500px;
 }
 
+/* day and month button adjustments */
 #btn-day {
     margin-left: 5vw;
 }
 #btn-month {
     margin-left: 2vw;
 }
-
+/* day and month hover effects */
 #btn-month:hover, #btn-day:hover {
     transform: translateY(-3px);
 }
