@@ -3,7 +3,10 @@ const socket = io()
 socket.on('searchVideo', (d) => {
   let { videoLink } = d
   document.getElementById("video-player").setAttribute("src", videoLink)
+  document.getElementById('loader').style.display = "none"
 })
+
+// function to determine day and return to search function
 function playDay() {
     var currentDate = new Date()
     var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -13,7 +16,7 @@ function playDay() {
     console.log(dayNames[currentDate.getDay()])
 }
 
-// on call runs search for current month of the year then passes the month to search function
+// function to determine month and return to search function
 function playMonth() {
     var currentDate = new Date();
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -23,7 +26,8 @@ function playMonth() {
     console.log(monthNames[currentDate.getMonth()])
 }
 
+// toggles loader and outputs video link when found
 function searchVideo(phrase, type) {
+  document.getElementById('loader').style.display = "flex"
   socket.emit('searchVideo', { phrase })
 }
-

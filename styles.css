@@ -9,6 +9,7 @@
 /* background colour */
 body {
     background-color: lightblue;
+    margin: 0;
 }
 
 /* video player size */
@@ -64,4 +65,19 @@ button {
 /* day and month hover effects */
 #btn-month:hover, #btn-day:hover {
     transform: translateY(-3px);
+}
+
+/* loader animation style */
+#loader {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 4rem;
+    flex-direction: column;
+    top: 0px !important;
 }
