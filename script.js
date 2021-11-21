@@ -1,14 +1,9 @@
-// nightmare - https://github.com/segmentio/nightmare
-const Nightmare = require('nightmare')
-const nightmare = Nightmare()
+const socket = io()
 
-
-// call for script testing console logs should return 
-// November and https://video.playphrase.me/5b1837c28079eb4cd4a53e99/5e8b7c0424aa9a0025987688.mp4
-// playMonth()
-
-
-// on call runs search for current day of the week then passes the day to search function
+socket.on('searchVideo', (d) => {
+  let { videoLink } = d
+  document.getElementById("video-player").setAttribute("src", videoLink)
+})
 function playDay() {
     var currentDate = new Date()
     var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -28,14 +23,7 @@ function playMonth() {
     console.log(monthNames[currentDate.getMonth()])
 }
 
-// searches for the correct video based on the passed phrase and changes the iframe src appropriately 
-async function searchVideo(phrase) {
-    var videoLink = await nightmare.goto("https://www.playphrase.me/#/search?q=" + phrase)
-                                   .wait("#video-player-0")
-                                   .evaluate(() => document.getElementById("video-player-0").getAttribute("src"))
-                                   .end()
-
-    // get id of iframe from index and change the src to the src found above
-    // document.getElementById("video-player").setAttribute("src", videoLink)
-    console.log(videoLink)
+function searchVideo(phrase, type) {
+  socket.emit('searchVideo', { phrase })
 }
+
